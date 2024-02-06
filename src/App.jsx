@@ -3,7 +3,7 @@ import './App.css'
 import Footer from './components/Common/Footer'
 import Menu from './components/Common/Menu'
 import Inicio from './components/pages/Inicio'
-import { Container } from 'react-bootstrap';
+import Error404 from './components/pages/Error404';
 
 function App() {
  
@@ -11,7 +11,8 @@ function App() {
     <>
     <section className='mainpage'>
       <Menu></Menu>
-      <Inicio></Inicio>
+     {/*  <Inicio></Inicio> */}
+      <Error404></Error404>
       </section>
       <Footer></Footer>
     </>
