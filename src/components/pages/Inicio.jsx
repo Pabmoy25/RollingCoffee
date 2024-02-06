@@ -1,5 +1,3 @@
-
-
 const Inicio = () => {
     return (
         <div>

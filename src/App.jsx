@@ -9,10 +9,10 @@ function App() {
  
   return (
     <>
-    <Container className='my-5 mainpage'>
+    <section className='mainpage'>
       <Menu></Menu>
       <Inicio></Inicio>
-      </Container>
+      </section>
       <Footer></Footer>
     </>
   )
