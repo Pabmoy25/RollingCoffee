@@ -1,1 +1,14 @@
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
+  .mainpage{
+    flex-grow: 1;
+  }
+
+
+.bg-green{
+    background: #003c25;
+}
