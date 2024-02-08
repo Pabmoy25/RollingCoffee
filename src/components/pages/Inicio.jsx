@@ -1,4 +1,4 @@
-import { Button, Card, Container, Image } from "react-bootstrap";
+import { Button, Card, Container, Image, Row } from "react-bootstrap";
 import banner from "../../assets/banner.png";
 import CoffeeBanner from "../../assets/CoffeeBanner.png";
 
@@ -13,7 +13,7 @@ const Inicio = () => {
       <h2 className="text-center mt-4">Nuestros Productos</h2>
        
     <Container className="d-flex">
-        
+      <Row>
       <Card className="m-4" style={{ width: "14rem" }}>
         <Card.Img variant="top" src={banner} />
         <Card.Body>
@@ -37,7 +37,7 @@ const Inicio = () => {
           <Button variant="success">Go somewhere</Button>
         </Card.Body>
       </Card>
-
+</Row>
       </Container>
 
     </>
