@@ -5,7 +5,10 @@ import ItemProducto from "./producto/ItemProducto";
 const Administrador = () => {
   return (
     <Container className="my-4">
-      <Table>
+       <div className="text-center">
+        <h3 className="display-4 ">Productos disponibles</h3>
+        </div>
+      <Table responsive striped bordered hover>
         <thead>
           <tr className="text-center">
             <th>Cod</th>
@@ -20,6 +23,7 @@ const Administrador = () => {
         <ItemProducto></ItemProducto>
         </tbody>
       </Table>
+     
     </Container>
   );
 };
