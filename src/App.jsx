@@ -6,14 +6,14 @@ import Inicio from "./components/pages/Inicio";
 import Error404 from "./components/pages/Error404";
 import Administrador from "./components/pages/Administrador";
 
-
 function App() {
   return (
     <>
       <section className="mainpage">
         <Menu></Menu>
-       <Inicio></Inicio>
+        {/* <Inicio></Inicio> */}
         {/* <Error404></Error404> */}
+        <Administrador></Administrador>
       </section>
       {/* <Administrador></Administrador> */}
       <Footer></Footer>
