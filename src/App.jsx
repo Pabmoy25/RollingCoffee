@@ -6,18 +6,29 @@ import Menu from "./components/Common/Menu";
 import Inicio from "./components/pages/Inicio";
 import Error404 from "./components/pages/Error404";
 import Administrador from "./components/pages/Administrador";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <section className="mainpage">
-        <Menu></Menu>
-        {/* <Inicio></Inicio> */}
-        {/* <Error404></Error404> */}
-        <Administrador></Administrador>
-      </section>
-      {/* <Administrador></Administrador> */}
-      <Footer></Footer>
+     
+    <BrowserRouter>
+    <Menu></Menu>
+<Routes>
+  <Route>
+  <Route exact path="/" element={<Inicio></Inicio>}></Route>
+  <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
+
+
+
+
+  </Route>
+</Routes>
+<Footer></Footer>
+</BrowserRouter>
+     
+      
+      
     </>
   );
 }
