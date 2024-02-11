@@ -6,6 +6,7 @@ import Inicio from "./components/pages/Inicio";
 import Error404 from "./components/pages/Error404";
 import Administrador from "./components/pages/Administrador";
 
+
 function App() {
   return (
     <>
