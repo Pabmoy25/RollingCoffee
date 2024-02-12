@@ -2,6 +2,7 @@ import { Table, Container } from "react-bootstrap";
 import ItemProducto from "./producto/ItemProducto";
 import { Link } from "react-router-dom";
 
+
 const Administrador = () => {
   return (
     <Container className="my-4">
