@@ -1,45 +1,28 @@
 import { Button, Card, Container, Image, Row } from "react-bootstrap";
 import banner from "../../assets/banner.png";
 import CoffeeBanner from "../../assets/CoffeeBanner.png";
+import CardProducto from "./producto/CardProducto";
 
 const Inicio = () => {
   return (
     <>
+  <section className="mainpage">
       
       <div>
         <Image src={CoffeeBanner} className="img-fluid" />
       </div>
       
+      <Container>
       <h2 className="text-center mt-4">Nuestros Productos</h2>
-       
-    <Container className="d-flex">
+      <hr />
+
       <Row>
-      <Card className="m-4" style={{ width: "14rem" }}>
-        <Card.Img variant="top" src={banner} />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button variant="success">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-
-      <Card className="m-4" style={{ width: "14rem" }}>
-        <Card.Img variant="top" src={banner} />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button variant="success">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-</Row>
+        <CardProducto></CardProducto>
+      </Row>
+       
       </Container>
-
+ 
+</section>
     </>
   );
 };
