@@ -12,7 +12,8 @@ const Administrador = () => {
 
   const traerProductos = async ()=> {
     try {
-      await leerProductosAPI()
+     const listaProductosAPI = await leerProductosAPI()
+     setProductos (listaProductosAPI);
     } catch (error) {
       console.log(error);
     }
@@ -38,7 +39,10 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-          <ItemProducto></ItemProducto>
+          {
+            productos.map((producto)=><ItemProducto key={producto.id} producto={producto}></ItemProducto>)
+          }
+          
         </tbody>
       </Table>
     </Container>
