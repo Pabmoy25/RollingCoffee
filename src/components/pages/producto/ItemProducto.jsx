@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const ItemProducto = () => {
   return (
@@ -15,10 +16,13 @@ const ItemProducto = () => {
       </td>
       <td>Bebida caliente</td>
       <td className="text-center">
-        <Button variant="warning" className="me-lg-2">
+
+       <NavLink end className="nav-link" to="/administrador/crear">
+              <Button variant="warning" className="me-lg-2">
           Editar
           <i className="bi bi-pencil-square"></i>
         </Button>
+        </NavLink> 
         <Button variant="danger" className="me-lg-2 mt-2">
           Borrar
           <i className="bi bi-trash"></i>
