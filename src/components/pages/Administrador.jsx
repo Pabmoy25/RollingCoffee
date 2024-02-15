@@ -1,6 +1,6 @@
 import { Table, Container } from "react-bootstrap";
 import ItemProducto from "./producto/ItemProducto";
-import { Await, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerProductosAPI } from "../../helpers/queries";
 
@@ -42,7 +42,6 @@ const Administrador = () => {
           {
             productos.map((producto)=><ItemProducto key={producto.id} producto={producto}></ItemProducto>)
           }
-          
         </tbody>
       </Table>
     </Container>

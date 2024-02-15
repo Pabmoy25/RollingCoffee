@@ -9,7 +9,7 @@ const ItemProducto = ({producto}) => {
       <td className="text-center">
         <img
           src={producto.imagen}
-          className="img-thumbnail"
+          className="img-thumbnail w-25"
           alt="capuchino"
         ></img>
       </td>
