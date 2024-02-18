@@ -21,15 +21,6 @@
       "id": "2"
     },
     {
-      "id": "399a",
-      "nombreProducto": "te verde",
-      "precio": "700",
-      "imagen": "https://img.freepik.com/foto-gratis/placa-madera-hoja-objeto-alimentacion-saludable_1172-451.jpg?w=740&t=st=1708260426~exp=1708261026~hmac=a55cec8977c1fe983ee17ed62c49386fe34f470361ff20bf9300dd1ae8d5089b",
-      "categoria": "Infusiones",
-      "descripcion_breve": "Una bebida de origen Chino",
-      "descripcion_amplia": "Se deriva de las hojas de la planta Camellia sinensis y es apreciado tanto por su sabor refrescante como por sus innumerables beneficios para la salud, lo que lo convierte en una elección cada vez más popular."
-    },
-    {
       "id": "ea27",
       "nombreProducto": "Mini Torta Chocolate",
       "precio": "1499",
@@ -37,15 +28,6 @@
       "categoria": "dulce",
       "descripcion_breve": "Mini Torta Chocolate y Nuez",
       "descripcion_amplia": "Brownie, helado de chocolate c/nuez , pionono, dulce de leche repostero y ganache de chocolate."
-    },
-    {
-      "id": "91f3",
-      "nombreProducto": "Medialuna",
-      "precio": "300",
-      "imagen": "https://img.freepik.com/foto-gratis/croissants-tabla-cortar-madera_1150-28480.jpg?w=740&t=st=1708262912~exp=1708263512~hmac=5ebfb99316a3238ed7a1e9e6efee6d99ad3410b35b482664a5e0bdeda7f4c00d",
-      "categoria": "dulce",
-      "descripcion_breve": "Medialuna con masa de hojaldre",
-      "descripcion_amplia": "La medialuna es sinónimo de textura crujiente y sabor irresistible, cualidades que lo han convertido en un producto al que pocos pueden resistirse."
     }
   ],
   "usuarios": [
