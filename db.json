@@ -11,20 +11,39 @@
       "id": "1"
     },
     {
-        "nombreProducto": "Té",
-        "precio": 300,
-        "categoria": "Infusiones",
-        "descripcion_breve":"té rico",
-        "descripcion_amplia": "Té concentrado y aromático que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
-        "imagen":"https://images.pexels.com/photos/814264/pexels-photo-814264.jpeg",
-        "disponibilidad": true,
-        "id":"2"
+      "nombreProducto": "Té",
+      "precio": 300,
+      "categoria": "Infusiones",
+      "descripcion_breve": "té rico",
+      "descripcion_amplia": "Té concentrado y aromático que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
+      "imagen": "https://images.pexels.com/photos/814264/pexels-photo-814264.jpeg",
+      "disponibilidad": true,
+      "id": "2"
+    },
+    {
+      "id": "399a",
+      "nombreProducto": "te verde",
+      "precio": "700",
+      "imagen": "https://img.freepik.com/foto-gratis/placa-madera-hoja-objeto-alimentacion-saludable_1172-451.jpg?w=740&t=st=1708260426~exp=1708261026~hmac=a55cec8977c1fe983ee17ed62c49386fe34f470361ff20bf9300dd1ae8d5089b",
+      "categoria": "Infusiones",
+      "descripcion_breve": "Una bebida de origen Chino",
+      "descripcion_amplia": "Se deriva de las hojas de la planta Camellia sinensis y es apreciado tanto por su sabor refrescante como por sus innumerables beneficios para la salud, lo que lo convierte en una elección cada vez más popular."
+    },
+    {
+      "id": "ea27",
+      "nombreProducto": "Mini Torta Chocolate",
+      "precio": "1499",
+      "imagen": "https://www.estherhelados.com.ar/webfiles/estherhelados/productos/133/1_1000x1000.jpg",
+      "categoria": "dulce",
+      "descripcion_breve": "Mini Torta Chocolate y Nuez",
+      "descripcion_amplia": "Brownie, helado de chocolate c/nuez , pionono, dulce de leche repostero y ganache de chocolate."
     }
   ],
-  "usuarios":[
+  "usuarios": [
     {
-        "email": "prueba@mail.com",
-        "password": "123" 
+      "email": "prueba@mail.com",
+      "password": "123",
+      "id": "b183"
     }
-]
+  ]
 }
