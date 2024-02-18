@@ -33,9 +33,9 @@ const FormularioProducto = () => {
           <Form.Label>Precio*</Form.Label>
           <Form.Control type="number" placeholder="Ej: 50" {
             ...register("precio",{
-              required:"Este campo es obligatorio", minLength:{value:2,
-              message:"Ingresar como minimo 2 digitos"},
-              maxLength:{value:4, message:"Ingresar como maximo 4 digitos"}
+              required:"El precio es obligatorio", min:{value:50,
+              message:"El precio minimo es de $50"},
+              max:{value:10000, message:"El precio maximo es de $10.000"}
             })
           } />
           <Form.Text className="text-danger">{errors.precio?.message}</Form.Text>
@@ -48,7 +48,11 @@ const FormularioProducto = () => {
             placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
             {
               ...register("imagen",{
-                required:"Debe cargar una URL valida"
+                required:"La imagen es obligatoria",
+                pattern:{
+                  value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/,
+                  message: "Debe ingresar una URL valida (jpg|gif|png)"
+                }
               })
             }/>
           <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
@@ -76,8 +80,8 @@ const FormularioProducto = () => {
             as="textarea" {
               ...register("descripcion_breve",{
                 required:"Este campo es obligatorio", minLength:{value:5,
-                message:"Ingresar como minimo 5 digitos"},
-                maxLength:{value:20, message:"Ingresar como maximo 20 digitos"}
+                message:"Ingresar como minimo 5 caracteres"},
+                maxLength:{value:40, message:"Ingresar como maximo 40 caracteres"}
               })
             }
           />
@@ -90,9 +94,9 @@ const FormularioProducto = () => {
             placeholder="Ej: El café americano es una bebida caliente que consiste en un espresso diluido con agua caliente, lo que resulta en una taza de café suave y aromático. Es una opción popular para aquellos que prefieren un café menos intenso que el espresso tradicional. Perfecto para disfrutar en cualquier momento del día."
             as="textarea" {
               ...register("descripcion_amplia",{
-                required:"Este campo es obligatorio", minLength:{value:15,
-                message:"Ingresar como minimo 15 digitos"},
-                maxLength:{value:50, message:"Ingresar como maximo 50 digitos"}
+                required:"Este campo es obligatorio", minLength:{value:50,
+                message:"Ingresar como minimo 50 caracteres"},
+                maxLength:{value:500, message:"Ingresar como maximo 250 caracteres"}
               })
             }
           />
