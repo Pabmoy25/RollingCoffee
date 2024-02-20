@@ -2,7 +2,9 @@ import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { borrarProductoAPI } from "../../../helpers/queries";
 
-const ItemProducto = ({ producto }) => {
+
+const ItemProducto = ({ producto, eliminarProducto }) => {
+
   const borrarProducto = () => {
     Swal.fire({
       title: "Esta seguro de eliminar el producto?",
@@ -13,14 +15,25 @@ const ItemProducto = ({ producto }) => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Borrar",
       cancelButtonText: "Cancelar",
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
-        borrarProductoAPI(producto.id);
+       
+      const respuesta = await borrarProductoAPI(producto.id);
+if (respuesta.status === 200) {
         Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
+          title: "El Producto fue eliminado",
+          text: `El producto "${producto.nombreProducto}" fue eliminado`,
           icon: "success",
         });
+        eliminarProducto(producto.id)
+      }else {
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: `El producto "${producto.nombreProducto}" no fue eliminado, intentelo en unos minutos`,
+          icon: "success",
+        });
+      
+      }
       }
     });
   };

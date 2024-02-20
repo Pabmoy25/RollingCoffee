@@ -2,13 +2,22 @@ import { Table, Container } from "react-bootstrap";
 import ItemProducto from "./producto/ItemProducto";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { leerProductosAPI } from "../../helpers/queries";
+import { leerProductosAPI,borrarProductoAPI } from "../../helpers/queries";
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
   useEffect(() => {
     traerProductos();
   }, []);
+
+  const borrarProducto = async (id) => {
+    try {
+      await borrarProductoAPI(id);
+      setProductos(productos.filter(producto => producto.id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const traerProductos = async ()=> {
     try {
@@ -40,7 +49,7 @@ const Administrador = () => {
         </thead>
         <tbody>
           {
-            productos.map((producto)=><ItemProducto key={producto.id} producto={producto}></ItemProducto>)
+            productos.map((producto)=><ItemProducto key={producto.id} producto={producto} eliminarProducto={borrarProducto}></ItemProducto>)
           }
         </tbody>
       </Table>
