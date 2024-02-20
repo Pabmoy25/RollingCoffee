@@ -1,4 +1,5 @@
 const URI_PRODUCTOS= import.meta.env.VITE_API_PRODUCTOS;
+const URI_USUARIOS= import.meta.env.VITE_API_USUARIOS;
 
 console.log(URI_PRODUCTOS);
 
@@ -40,6 +41,23 @@ export const borrarProductoAPI = async (id)=>{
         const respuesta = await fetch(`${URI_PRODUCTOS}/${id}`, {
             method: "DELETE",
             });
+        console.log(respuesta)
+        return respuesta
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// POST (CREAR)
+export const crearUsuarioAPI = async (usuarioNuevo)=>{
+    try {
+        const respuesta = await fetch(URI_USUARIOS, {
+            method: "POST",
+            headers: {"Content-Type":"application/json"
+        },
+        body: JSON.stringify(usuarioNuevo)
+     });
         console.log(respuesta)
         return respuesta
 
