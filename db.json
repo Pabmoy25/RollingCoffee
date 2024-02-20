@@ -53,6 +53,16 @@
       "email": "prueba@mail.com",
       "password": "123",
       "id": "b183"
+    },
+    {
+      "id": "40cd",
+      "email": "jose@gmail.com",
+      "password": "JoseMaria27"
+    },
+    {
+      "id": "d353",
+      "email": "bj@gmail.com",
+      "password": "BJdiseños18"
     }
   ]
 }
