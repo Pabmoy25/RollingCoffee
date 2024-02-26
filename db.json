@@ -2,32 +2,30 @@
   "productos": [
     {
       "nombreProducto": "café",
-      "precio": 1000,
+      "precio": "1405",
+      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "categoria": "Infusiones",
       "descripcion_breve": "cafe rico",
       "descripcion_amplia": "bebida de café concentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
-      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "disponibilidad": true,
       "id": "1"
     },
     {
       "nombreProducto": "Té",
-      "precio": 300,
+      "precio": "700",
+      "imagen": "https://images.pexels.com/photos/814264/pexels-photo-814264.jpeg",
       "categoria": "Infusiones",
       "descripcion_breve": "té rico",
       "descripcion_amplia": "Té concentrado y aromático que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
-      "imagen": "https://images.pexels.com/photos/814264/pexels-photo-814264.jpeg",
-      "disponibilidad": true,
       "id": "2"
     },
     {
-      "id": "399a",
       "nombreProducto": "te verde",
-      "precio": "700",
+      "precio": "600",
       "imagen": "https://img.freepik.com/foto-gratis/placa-madera-hoja-objeto-alimentacion-saludable_1172-451.jpg?w=740&t=st=1708260426~exp=1708261026~hmac=a55cec8977c1fe983ee17ed62c49386fe34f470361ff20bf9300dd1ae8d5089b",
       "categoria": "Infusiones",
       "descripcion_breve": "Una bebida de origen Chino",
-      "descripcion_amplia": "Se deriva de las hojas de la planta Camellia sinensis y es apreciado tanto por su sabor refrescante como por sus innumerables beneficios para la salud, lo que lo convierte en una elección cada vez más popular."
+      "descripcion_amplia": "Se deriva de las hojas de la planta Camellia sinensis y es apreciado tanto por su sabor refrescante como por sus innumerables beneficios para la salud, lo que lo convierte en una elección cada vez más popular.",
+      "id": "399a"
     },
     {
       "id": "91f3",

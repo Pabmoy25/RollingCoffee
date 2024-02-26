@@ -1,12 +1,15 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
+import {
+  crearProductoAPI,
+  editarProductoAPI,
+  obtenerProductoAPI,
+} from "../../../helpers/queries";
 import Swal from "sweetalert2";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
-
-const FormularioProducto = ({editar,titulo}) => {
+const FormularioProducto = ({ editar, titulo }) => {
   const {
     register,
     handleSubmit,
@@ -14,22 +17,21 @@ const FormularioProducto = ({editar,titulo}) => {
     reset,
     setValue,
   } = useForm();
-  const {id} = useParams();
-  console.log(id)
-  
+  const { id } = useParams();
+
+  const navegacion = useNavigate();
+
   useEffect(() => {
     //solo si estoy editando
     if (editar) {
-      
-   cargarDatosFormulario();
+      cargarDatosFormulario();
     }
-  },[])
+  }, []);
 
-  const cargarDatosFormulario = async () =>{
-    
-    const respuesta = await obtenerProductoAPI(id)
-    console.log(respuesta)
-    if (respuesta.status === 200){
+  const cargarDatosFormulario = async () => {
+    const respuesta = await obtenerProductoAPI(id);
+    console.log(respuesta);
+    if (respuesta.status === 200) {
       const productoBuscado = await respuesta.json();
       /* console.log(productoBuscado) */
       //cargar los datos del productoBuscado en el formulario
@@ -39,40 +41,59 @@ const FormularioProducto = ({editar,titulo}) => {
       setValue("descripcion_breve", productoBuscado.descripcion_breve);
       setValue("descripcion_amplia", productoBuscado.descripcion_amplia);
       setValue("imagen", productoBuscado.imagen);
-    }else{
+    } else {
       Swal.fire({
         title: "Ocurrio un error",
         text: "Intente editar en unos minutos",
         icon: "error",
       });
     }
-  }
+  };
 
   const productoValidado = async (producto) => {
-    if (editar){
-      //agregar la logica para editar el producto con la api
-    }else{
-      console.log(producto);
-    // Esta es la logica cuando quiero crear un producto
-    const respuesta = await crearProductoAPI(producto);
-    if (respuesta.status === 201) {
-      //mensaje para el usuario
-      Swal.fire({
-        title: "Producto creado",
-        text: `El producto: ${producto.nombreProducto} fue creado con exito`,
-        icon: "success",
-      });
-      reset();
-    } else {
-      Swal.fire({
-        title: "Ocurrio un error",
-        text: "Intente crear el producto en unos minutos",
-        icon: "error",
-      });
+    try {
+      if (editar) {
+        //agregar la logica para editar el producto con la api
+        const respuesta = await editarProductoAPI(id, producto);
+        if (respuesta.status === 200) {
+          Swal.fire({
+            title: "Producto editado",
+            text: `El producto: ${producto.nombreProducto} fue editado con exito`,
+            icon: "success",
+          });
+          //Redireccionar
+          navegacion("/administrador");
+        } else {
+          Swal.fire({
+            title: "Ocurrio un error",
+            text: "Intente modificar el producto en unos minutos",
+            icon: "error",
+          });
+        }
+      } else {
+        console.log(producto);
+        // Esta es la logica cuando quiero crear un producto
+        const respuesta = await crearProductoAPI(producto);
+        if (respuesta.status === 201) {
+          //mensaje para el usuario
+          Swal.fire({
+            title: "Producto creado",
+            text: `El producto: ${producto.nombreProducto} fue creado con exito`,
+            icon: "success",
+          });
+          reset();
+        } else {
+          Swal.fire({
+            title: "Ocurrio un error",
+            text: "Intente crear el producto en unos minutos",
+            icon: "error",
+          });
+        }
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
-    }
-    
 
   return (
     <section className="container mainpage">
@@ -124,8 +145,8 @@ const FormularioProducto = ({editar,titulo}) => {
             {...register("imagen", {
               required: "La imagen es obligatoria",
               pattern: {
-                value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/,
-                message: "Debe ingresar una URL valida (jpg|gif|png)",
+                value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/,
+                message: "Debe ingresar una URL valida (jpg|gif|png|jpeg)",
               },
             })}
           />
