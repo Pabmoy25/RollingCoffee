@@ -31,9 +31,14 @@ const FormularioProducto = ({editar,titulo}) => {
     console.log(respuesta)
     if (respuesta.status === 200){
       const productoBuscado = await respuesta.json();
-      console.log(productoBuscado)
+      /* console.log(productoBuscado) */
       //cargar los datos del productoBuscado en el formulario
-      setValue("nombreProducto", productoBuscado.nombreProducto)
+      setValue("nombreProducto", productoBuscado.nombreProducto);
+      setValue("precio", productoBuscado.precio);
+      setValue("categoria", productoBuscado.categoria);
+      setValue("descripcion_breve", productoBuscado.descripcion_breve);
+      setValue("descripcion_amplia", productoBuscado.descripcion_amplia);
+      setValue("imagen", productoBuscado.imagen);
     }else{
       Swal.fire({
         title: "Ocurrio un error",
@@ -138,8 +143,8 @@ const FormularioProducto = ({editar,titulo}) => {
             <option value="">Seleccione una opcion</option>
             <option value="Infusiones">Infusiones</option>
             <option value="Batidos">Batidos</option>
-            <option value="dulce">Dulce</option>
-            <option value="salado">Salado</option>
+            <option value="Dulce">Dulce</option>
+            <option value="Salado">Salado</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}
