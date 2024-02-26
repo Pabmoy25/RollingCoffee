@@ -1,5 +1,4 @@
 import { Container, Image, Row } from "react-bootstrap";
-
 import CoffeeBanner from "../../assets/CoffeeBanner.png";
 import CardProducto from "./producto/CardProducto";
 import { useEffect, useState } from "react";

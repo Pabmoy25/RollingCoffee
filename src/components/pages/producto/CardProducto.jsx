@@ -9,11 +9,11 @@ const CardProducto = ({cardProducto}) => {
             <Card.Body>
             <Card.Title className="primary-font">{cardProducto.nombreProducto}</Card.Title>
             <Card.Text>
-            {cardProducto.descripcion_amplia} <br className="mb-2"/> 
+              Descripcion: {cardProducto.descripcion_breve} <br className="mb-2"/> 
               <span className="fw-bold">${cardProducto.precio}</span></Card.Text>
             </Card.Body>
             <Card.Footer className="text-end">
-            <Link className='btn btn-success me-2' to='/detalleproducto'>Ver más</Link>
+            <Link className='btn btn-success me-2' to={'/detalleproducto/'+ cardProducto.id}>Ver más</Link>
           </Card.Footer>
           </Card>
         </Col>
