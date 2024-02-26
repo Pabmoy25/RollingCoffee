@@ -1,7 +1,10 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProductoAPI } from "../../../helpers/queries";
+import { crearProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+
 
 const FormularioProducto = ({editar,titulo}) => {
   const {
@@ -9,7 +12,36 @@ const FormularioProducto = ({editar,titulo}) => {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
   } = useForm();
+  const {id} = useParams();
+  console.log(id)
+  
+  useEffect(() => {
+    //solo si estoy editando
+    if (editar) {
+      
+   cargarDatosFormulario();
+    }
+  },[])
+
+  const cargarDatosFormulario = async () =>{
+    
+    const respuesta = await obtenerProductoAPI(id)
+    console.log(respuesta)
+    if (respuesta.status === 200){
+      const productoBuscado = await respuesta.json();
+      console.log(productoBuscado)
+      //cargar los datos del productoBuscado en el formulario
+      setValue("nombreProducto", productoBuscado.nombreProducto)
+    }else{
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: "Intente editar en unos minutos",
+        icon: "error",
+      });
+    }
+  }
 
   const productoValidado = async (producto) => {
     if (editar){
