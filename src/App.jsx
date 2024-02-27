@@ -10,6 +10,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DetalleProducto from "./components/pages/DetalleProducto";
 import FormularioProducto from "./components/pages/producto/FormularioProducto";
 import Login from "./components/pages/Login";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import { Children } from "react";
+import RutasAdmin from "./components/routes/RutasAdmin";
 
 function App() {
   return (
@@ -28,9 +31,11 @@ function App() {
             <Route path="*" element={<Error404></Error404>}></Route>
             <Route
               exact
-              path="/administrador"
-              element={<Administrador></Administrador>}
+              path="/administrador/*"
+              element={<RutasProtegidas>
+                <RutasAdmin></RutasAdmin></RutasProtegidas>}
             ></Route>
+
             
             
           </Route>
