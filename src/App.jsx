@@ -11,18 +11,26 @@ import DetalleProducto from "./components/pages/DetalleProducto";
 import FormularioProducto from "./components/pages/producto/FormularioProducto";
 import Login from "./components/pages/Login";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
-import { Children } from "react";
+import { Children, useState } from "react";
 import RutasAdmin from "./components/routes/RutasAdmin";
 
 function App() {
+  const usuario =
+    JSON.parse(sessionStorage.getItem(`inicioRollingCoffe`)) || "";
+  const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
+
   return (
     <>
       <BrowserRouter>
-        <Menu></Menu>
+        <Menu usuarioLogueado={usuarioLogeado} setUsuarioLogueado={setUsuarioLogeado}></Menu>
         <Routes>
           <Route>
             <Route exact path="/" element={<Inicio></Inicio>}></Route>
-            <Route exact path="/login" element={<Login></Login>}></Route>
+            <Route
+              exact
+              path="/login"
+              element={<Login setUsuarioLogeado={setUsuarioLogeado}></Login>}
+            ></Route>
             <Route
               exact
               path="/detalleproducto/:id"
@@ -32,12 +40,12 @@ function App() {
             <Route
               exact
               path="/administrador/*"
-              element={<RutasProtegidas>
-                <RutasAdmin></RutasAdmin></RutasProtegidas>}
+              element={
+                <RutasProtegidas>
+                  <RutasAdmin></RutasAdmin>
+                </RutasProtegidas>
+              }
             ></Route>
-
-            
-            
           </Route>
         </Routes>
         <Footer></Footer>
