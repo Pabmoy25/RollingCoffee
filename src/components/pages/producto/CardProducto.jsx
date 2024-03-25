@@ -13,7 +13,7 @@ const CardProducto = ({cardProducto}) => {
               <span className="fw-bold">${cardProducto.precio}</span></Card.Text>
             </Card.Body>
             <Card.Footer className="text-end">
-            <Link className='btn btn-success me-2' to={'/detalleproducto/'+ cardProducto.id}>Ver más</Link>
+            <Link className='btn btn-success me-2' to={'/detalleproducto/'+ cardProducto._id}>Ver más</Link>
           </Card.Footer>
           </Card>
         </Col>

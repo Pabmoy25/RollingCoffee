@@ -69,7 +69,7 @@ export const editarProductoAPI = async (id, producto) => {
     return respuesta;
   } catch (error) {
     console.log(error);
-  }
+  }/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/
 };
 
 //cuando tenga el backend realizar una peticion POST para el login

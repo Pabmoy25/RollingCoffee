@@ -13,7 +13,7 @@ const Administrador = () => {
   const borrarProducto = async (id) => {
     try {
       await borrarProductoAPI(id);
-      setProductos(productos.filter(producto => producto.id !== id));
+      setProductos(productos.filter(producto => producto._id !== id));
     } catch (error) {
       console.log(error);
     }
@@ -49,7 +49,7 @@ const Administrador = () => {
         </thead>
         <tbody>
           {
-            productos.map((producto)=><ItemProducto key={producto.id} producto={producto} eliminarProducto={borrarProducto}></ItemProducto>)
+            productos.map((producto)=><ItemProducto key={producto._id} producto={producto} eliminarProducto={borrarProducto}></ItemProducto>)
           }
         </tbody>
       </Table>

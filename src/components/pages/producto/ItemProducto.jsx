@@ -19,14 +19,14 @@ const ItemProducto = ({ producto, eliminarProducto }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
        
-      const respuesta = await borrarProductoAPI(producto.id);
+      const respuesta = await borrarProductoAPI(producto._id);
 if (respuesta.status === 200) {
         Swal.fire({
           title: "El Producto fue eliminado",
           text: `El producto "${producto.nombreProducto}" fue eliminado`,
           icon: "success",
         });
-        eliminarProducto(producto.id)
+        eliminarProducto(producto._id)
       }else {
         Swal.fire({
           title: "Ocurrio un error",
@@ -40,7 +40,7 @@ if (respuesta.status === 200) {
   };
   return (
     <tr>
-      <td className="text-center">{producto.id}</td>
+      <td className="text-center">{producto._id}</td>
       <td>{producto.nombreProducto}</td>
       <td className="text-end">{producto.precio}</td>
       <td className="text-center">
@@ -52,7 +52,7 @@ if (respuesta.status === 200) {
       </td>
       <td>{producto.categoria}</td>
       <td className="text-center">
-        <Link variant="warning" className="me-lg-2 btn btn-warning" to={`/administrador/editar/${producto.id}`} >
+        <Link variant="warning" className="me-lg-2 btn btn-warning" to={`/administrador/editar/${producto._id}`} >
           <i className="bi bi-pencil-square"></i>
         </Link>
         <Button
